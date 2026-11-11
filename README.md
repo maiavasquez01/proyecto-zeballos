@@ -16,7 +16,7 @@ Abrí `index.html` con el navegador (doble clic). No necesita servidor.
 ```
 index.html, calidad.html, procesos.html, metodologias.html,
 recursos.html, nosotros.html, contacto.html
-css/style.css   estilos (mobile-first)
+css/style.css   estilos (mobile-first) 
 js/script.js    menú, selector de modelos, comparador, encuesta
 img/            imágenes y diagramas SVG
 ```
