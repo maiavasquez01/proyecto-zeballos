@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos y Aprendizaje | NEXO Q</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo-container">
+                <img src="img/logonexo.jpg" alt="Logo NEXO Q">
+            </a>
+            <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="calidad.html">Gestion de Calidad</a></li>
+                <li><a href="procesos.html">Procesos de Desarrollo de Software</a></li>
+                <li><a href="metodologias.html">Metodologias agiles</a></li>
+                <li><a href="recursos.html">Recursos y Aprendizaje</a></li>
+                <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                            <li class="menu-social">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+<section class="content-section">
+    <h2 class="page-pill">Recursos y Aprendizaje</h2>
+    <div class="herramientas-botones">
+        <button type="button" class="btn-herramienta" data-abre="panel-comparador" aria-controls="panel-comparador" aria-expanded="false">Comparador de metodologias</button>
+        <button type="button" class="btn-herramienta" data-abre="panel-encuesta" aria-controls="panel-encuesta" aria-expanded="false">Encuesta de preferencias</button>
+    </div>
+
+    <section id="panel-comparador" class="panel-herramienta" aria-label="Comparador de metodologías">
+        <h3 class="titulo-herramienta">Comparador de metodologias</h3>
+        <p class="aviso-comparador" id="aviso-comparador">Elegi 2 o mas para comparar!</p>
+        <div class="chips" id="chips-comparador">
+            <button type="button" class="chip" data-id="scrum" aria-pressed="false">Scrum</button>
+            <button type="button" class="chip" data-id="cascada" aria-pressed="false">Cascada</button>
+            <button type="button" class="chip" data-id="kanban" aria-pressed="false">Kanban</button>
+            <button type="button" class="chip solo-escritorio" data-id="xp" aria-pressed="false">XP</button>
+            <button type="button" class="chip solo-escritorio" data-id="modelo-v" aria-pressed="false">Modelo en V</button>
+            <button type="button" class="chip solo-escritorio" data-id="iterativo" aria-pressed="false">Iterativo</button>
+        </div>
+        <div class="tabla-wrap hidden" id="tabla-comparador-wrap"><table class="tabla-comparador" id="tabla-comparador"></table></div>
+        <button type="button" class="btn-ir-encuesta" data-abre="panel-encuesta">Encuesta de preferencias metodologicas</button>
+    </section>
+
+    <section id="panel-encuesta" class="panel-herramienta" aria-label="Encuesta de preferencias metodológicas">
+        <h3 class="titulo-herramienta">Encuesta de preferencias metodologicas</h3>
+        <div id="encuesta-contenido" class="encuesta-zona"></div>
+    </section>
+
+    <p>Material de consulta, herramientas y ejercicios prácticos para afianzar los conceptos de gestión y calidad de procesos.</p>
+
+    <div class="info-card">
+        <h3>Glosario Técnico</h3>
+        <p><strong>SDLC:</strong> Software Development Life Cycle.</p>
+        <p><strong>QA:</strong> Quality Assurance.</p>
+        <p><strong>Sprint:</strong> Iteración temporal acotada en marcos ágiles.</p>
+    </div>
+
+    <div class="info-card">
+        <h3>Preguntas Frecuentes (FAQ)</h3>
+        <p><strong>¿Cuál es la diferencia entre QA y QC?</strong> QA se enfoca en los procesos para prevenir defectos, mientras QC se enfoca en verificar el producto terminado.</p>
+    </div>
+
+    <div class="info-card">
+        <h3>Ejercicio / Caso Práctico</h3>
+        <p>Diseña un tablero Kanban para un equipo de soporte técnico identificando las columnas: <em>Pendiente, En Proceso, En Revisión y Terminado</em>.</p>
+    </div>
+</section>
+</main>
+    <footer>
+        <div class="social-icons">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2026 NEXO Q - Gestión & Procesos. Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

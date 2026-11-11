@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesos de Desarrollo de Software | NEXO Q</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo-container">
+                <img src="img/logonexo.jpg" alt="Logo NEXO Q">
+            </a>
+            <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="calidad.html">Gestion de Calidad</a></li>
+                <li><a href="procesos.html">Procesos de Desarrollo de Software</a></li>
+                <li><a href="metodologias.html">Metodologias agiles</a></li>
+                <li><a href="recursos.html">Recursos y Aprendizaje</a></li>
+                <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                            <li class="menu-social">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+<section class="content-section">
+    <h2 class="page-pill solo-movil">Procesos de Desarrollo de Software</h2>
+
+
+        <div class="ventajas-desventajas solo-movil" aria-label="Ventajas y desventajas del modelo en cascada">
+            <div class="vd-etiquetas"><span>ventajas</span><span>desventajas</span></div>
+            <div class="vd-slider" data-slider>
+                <div class="vd-lado desventajas"><ul><li>Rígido ante cambios</li><li>Producto visible recién al final</li><li>Errores se detectan tarde</li></ul></div>
+                <div class="vd-lado ventajas"><ul><li>Estructura clara</li><li>Fácil de administrar</li><li>Documentación completa</li></ul></div>
+                <div class="vd-linea"></div>
+                <div class="vd-perilla"></div>
+                <input type="range" min="0" max="100" value="50" aria-label="Deslizá para comparar ventajas y desventajas">
+            </div>
+        </div>
+
+    <p class="solo-movil">El Ciclo de Vida del Desarrollo de Software (SDLC) es un marco estructurado que define las fases necesarias para diseñar, desarrollar y entregar un sistema de software de alta calidad.</p>
+
+    <div class="info-card solo-movil">
+        <h3>Modelos Tradicionales</h3>
+        <p><strong>Modelo en Cascada (Waterfall):</strong> Enfoque secuencial y lineal donde cada fase debe completarse antes de pasar a la siguiente.</p>
+        <ul>
+            <li><strong>Ventajas:</strong> Estructura clara, fácil de entender y administrar en proyectos con requisitos fijos.</li>
+            <li><strong>Desventajas:</strong> Alta rigidez ante cambios tardíos y el producto funcional se ve solo al final.</li>
+        </ul>
+    </div>
+
+    <section class="modelos" id="modelos" aria-label="Modelos tradicionales">
+        <div class="modelos-selector" id="modelos-selector">
+            <h3 class="modelos-titulo">Modelos tradicionales</h3>
+            <p class="modelos-ayuda">Elegí un modelo para ver sus ventajas, desventajas y cuándo usarlo.</p>
+            <div class="modelos-botones">
+                <button type="button" class="btn-modelo" data-modelo="cascada">Cascada</button>
+                <button type="button" class="btn-modelo" data-modelo="modelo-v">Modelo en V</button>
+                <button type="button" class="btn-modelo" data-modelo="iterativo">Iterativo e Incremental</button>
+            </div>
+        </div>
+        <div class="modelo-panel" id="modelo-panel" hidden></div>
+    </section>
+</section>
+</main>
+    <footer>
+        <div class="social-icons">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2026 NEXO Q - Gestión & Procesos. Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
