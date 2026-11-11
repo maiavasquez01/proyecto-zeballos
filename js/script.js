@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
     iniciarAmpliar();
     iniciarModelos();
     iniciarNosotros();
+    iniciarEstandares();
     iniciarHerramientas();
     iniciarComparador();
     iniciarEncuesta();
@@ -121,6 +122,67 @@ function iniciarAmpliar(){
             if(ampliado){
                 seccion.querySelector('figure').scrollIntoView({behavior:'smooth', block:'center'});
             }
+        });
+    });
+}
+
+/* ---------- Gestión de Calidad: estándares ISO (escritorio) ---------- */
+const DATOS_ISO = {
+    '9126': {
+        titulo: 'ISO 9126',
+        intro: 'Fue un modelo para evaluar la calidad del producto de software. Define 6 características.',
+        items: [
+            ['Funcionalidad', 'Hace lo que tiene que hacer.', false],
+            ['Fiabilidad', 'Funciona sin fallar.', false],
+            ['Usabilidad', 'Es fácil de aprender y de usar.', false],
+            ['Eficiencia', 'Usa bien el tiempo y los recursos.', false],
+            ['Mantenibilidad', 'Es fácil de corregir y modificar.', false],
+            ['Portabilidad', 'Se puede llevar a otro entorno.', false]
+        ]
+    },
+    '25000': {
+        titulo: 'ISO/IEC 25000 (SQuaRE)',
+        intro: 'Es la familia de normas que reemplazó a la ISO 9126. Su modelo de calidad tiene 8 características: dos son nuevas.',
+        items: [
+            ['Adecuación funcional', 'Hace lo que tiene que hacer.', false],
+            ['Eficiencia de desempeño', 'Rinde bien según los recursos que usa.', false],
+            ['Compatibilidad', 'Convive con otros sistemas.', true],
+            ['Usabilidad', 'Es fácil de aprender y de usar.', false],
+            ['Fiabilidad', 'Funciona sin fallar.', false],
+            ['Seguridad', 'Protege la información y los accesos.', true],
+            ['Mantenibilidad', 'Es fácil de corregir y modificar.', false],
+            ['Portabilidad', 'Se puede llevar a otro entorno.', false]
+        ]
+    }
+};
+
+function iniciarEstandares(){
+    const botones = document.querySelectorAll('.btn-iso');
+    const detalle = document.getElementById('iso-detalle');
+
+    if(botones.length === 0 || !detalle){
+        return;
+    }
+
+    function mostrar(id){
+        const estandar = DATOS_ISO[id];
+        let html = '<h4 class="iso-nombre">' + estandar.titulo + '</h4><p class="iso-intro">' + estandar.intro + '</p><div class="iso-grilla">';
+
+        estandar.items.forEach(function(item){
+            const etiqueta = item[2] ? '<span class="etiqueta-nueva">Nueva</span>' : '';
+
+            html += '<article class="iso-item"><h4>' + item[0] + '</h4><p>' + item[1] + '</p>' + etiqueta + '</article>';
+        });
+        html += '</div>';
+        detalle.innerHTML = html;
+    }
+
+    botones.forEach(function(boton){
+        boton.addEventListener('click', function(){
+            botones.forEach(function(otro){
+                otro.setAttribute('aria-pressed', String(otro === boton));
+            });
+            mostrar(boton.getAttribute('data-iso'));
         });
     });
 }

@@ -1752,3 +1752,183 @@ footer {
     text-align: center;
     transform: none;
 }
+
+
+/* ---------- Gestión de Calidad (escritorio, según Canva) ---------- */
+.calidad-escritorio {
+    display: none;
+}
+
+@media (min-width: 1025px) {
+    .calidad-escritorio {
+        display: block;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .calidad-titulo {
+        font-family: var(--fuente-abierta);
+        font-size: 3rem;
+        font-weight: 800;
+    }
+
+    .calidad-sub {
+        margin: 6px 0 22px;
+        font-family: var(--fuente-abierta);
+        font-size: 1.3rem;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .ideas-clave {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 34px;
+    }
+
+    .idea,
+    .iso-item {
+        padding: 18px 16px;
+        border: 2px solid var(--turquesa);
+        border-radius: 16px;
+        background: rgba(12, 28, 52, 0.82);
+        text-align: left;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .idea:hover,
+    .idea:focus-visible,
+    .iso-item:hover {
+        transform: translateY(-6px);
+        border-color: #ffffff;
+        box-shadow: 0 10px 24px rgba(64, 192, 188, 0.4);
+        outline: none;
+    }
+
+    .idea h3 {
+        margin-bottom: 8px;
+        color: var(--turquesa);
+        font-family: var(--fuente-pastilla);
+        font-size: 1.15rem;
+    }
+
+    .idea p,
+    .iso-item p {
+        font-family: var(--fuente-abierta);
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .iso-titulo {
+        font-family: var(--fuente-abierta);
+        font-size: 2.2rem;
+        font-style: italic;
+        text-decoration: underline;
+    }
+
+    .iso-ayuda {
+        margin: 6px 0 16px;
+        font-family: var(--fuente-abierta);
+        font-size: 1.15rem;
+    }
+
+    .iso-botones {
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        margin-bottom: 22px;
+    }
+
+    .btn-iso {
+        width: 220px;
+        padding: 16px 10px;
+        border: 2px solid var(--turquesa);
+        border-radius: 22px;
+        background: #201e20;
+        color: #ffffff;
+        font-family: var(--fuente-pastilla);
+        font-size: 1.3rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-iso:hover,
+    .btn-iso[aria-pressed="true"] {
+        background: #3f5b6b;
+        transform: translateY(-3px);
+    }
+
+    .iso-intro {
+        margin-bottom: 16px;
+        font-family: var(--fuente-abierta);
+        font-size: 1rem;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .iso-grilla {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        animation: aparecer 0.35s ease;
+    }
+
+    .iso-item h4 {
+        margin-bottom: 6px;
+        font-family: var(--fuente-pastilla);
+        font-size: 1rem;
+    }
+
+    .iso-item p {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .idea-clave {
+        max-width: 760px;
+        margin: -10px auto 30px 0;
+        padding: 10px 16px;
+        border-left: 4px solid var(--turquesa);
+        border-radius: 8px;
+        background: rgba(12, 28, 52, 0.85);
+        text-align: left;
+        font-family: var(--fuente-abierta);
+    }
+
+    .idea-clave strong {
+        color: var(--turquesa);
+        font-size: 0.85rem;
+    }
+
+    .idea-clave p {
+        margin-top: 4px;
+        font-size: 0.95rem;
+    }
+
+    .iso-nombre {
+        margin-bottom: 6px;
+        color: var(--turquesa);
+        font-family: var(--fuente-abierta);
+        font-size: 1.1rem;
+        text-align: left;
+    }
+
+    .iso-intro {
+        text-align: left;
+    }
+
+    .etiqueta-nueva {
+        display: inline-block;
+        margin-top: 8px;
+        padding: 2px 10px;
+        border-radius: 10px;
+        background: var(--turquesa);
+        color: #08121f;
+        font-family: var(--fuente-abierta);
+        font-size: 0.7rem;
+        font-weight: 700;
+    }
+}

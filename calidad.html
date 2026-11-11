@@ -34,9 +34,9 @@
     </header>
     <main>
 <section class="content-section">
-    <h2 class="page-pill">Gestion de Calidad</h2>
+    <h2 class="page-pill solo-movil">Gestion de Calidad</h2>
 
-        <div class="ventajas-desventajas" aria-label="Ventajas y desventajas de la gestión de calidad">
+        <div class="ventajas-desventajas solo-movil" aria-label="Ventajas y desventajas de la gestión de calidad">
             <div class="vd-etiquetas"><span>ventajas</span><span>desventajas</span></div>
             <div class="vd-slider" data-slider>
                 <div class="vd-lado desventajas"><ul><li>Requiere tiempo y recursos</li><li>Hay que capacitar al equipo</li><li>Puede volverse burocrática</li><li>Resultados a mediano plazo</li></ul></div>
@@ -47,15 +47,46 @@
             </div>
         </div>
 
-    <p>La gestión de la calidad asegura que los productos de software cumplan con los estándares requeridos y satisfagan las expectativas de los usuarios y clientes mediante procesos formales de control.</p>
+    <p class="solo-movil">La gestión de la calidad asegura que los productos de software cumplan con los estándares requeridos y satisfagan las expectativas de los usuarios y clientes mediante procesos formales de control.</p>
 
-    <div class="info-card">
+    <div class="info-card solo-movil">
         <h3>Pilares Principales:</h3>
         <ul>
             <li><strong>Aseguramiento de Calidad (QA):</strong> Prevención de defectos en los procesos de desarrollo.</li>
             <li><strong>Control de Calidad (QC):</strong> Detección de errores y defectos en el producto final antes de su entrega.</li>
             <li><strong>Mejora Continua:</strong> Ciclos iterativos de evaluación y optimización basados en métricas.</li>
         </ul>
+    </div>
+
+    <div class="calidad-escritorio">
+        <h2 class="calidad-titulo">Fundamentos de Calidad</h2>
+        <p class="calidad-sub">Para hablar de calidad de software hay que conocer tres ideas clave.</p>
+        <div class="ideas-clave">
+            <article class="idea" tabindex="0">
+                <h3>Calidad</h3>
+                <p>Qué tan bien un producto cumple lo que el usuario necesita y espera.</p>
+            </article>
+            <article class="idea" tabindex="0">
+                <h3>Métrica</h3>
+                <p>Una medida que dice qué tan buena es la calidad. Por ejemplo, la cantidad de errores.</p>
+            </article>
+            <article class="idea" tabindex="0">
+                <h3>Estándar</h3>
+                <p>Reglas acordadas a nivel internacional para evaluar y mejorar la calidad.</p>
+            </article>
+        </div>
+        <div class="idea-clave">
+            <strong>Idea clave</strong>
+            <p>La calidad del resultado depende de la calidad de los procesos que se usan para hacerlo.</p>
+        </div>
+
+        <h3 class="iso-titulo">Estándares ISO</h3>
+        <p class="iso-ayuda">Elegí un estándar para ver sus características.</p>
+        <div class="iso-botones">
+            <button type="button" class="btn-iso" data-iso="9126" aria-pressed="false">ISO 9126</button>
+            <button type="button" class="btn-iso" data-iso="25000" aria-pressed="false">ISO 25000</button>
+        </div>
+        <div class="iso-detalle" id="iso-detalle" aria-live="polite"></div>
     </div>
 </section>
 </main>
