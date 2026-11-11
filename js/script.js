@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function(){
     iniciarDeslizadores();
     iniciarAmpliar();
     iniciarModelos();
+    iniciarNosotros();
     iniciarHerramientas();
     iniciarComparador();
     iniciarEncuesta();
@@ -122,6 +123,48 @@ function iniciarAmpliar(){
             }
         });
     });
+}
+
+/* ---------- Sobre Nosotros: fotos y vista previa del menú ---------- */
+const TEXTO_PREVIA_NOSOTROS = 'Conocé al equipo de Nexo Q y qué nos motiva. Somos el equipo detrás de NEXO Q, un proyecto que armamos para la materia Sistemas de Gestión de Calidad. Nuestra propuesta es explicar de forma simple cómo se organizan los procesos y las metodologías de trabajo en el desarrollo de software. Somos dos: una Scrum Master y diseñadora, y una programadora y tester. Trabajamos aplicando lo que mostramos en la página: dividimos las tareas en sprints, nos ayudamos entre nosotras y probamos todo antes de publicarlo. Queremos que aprender sobre calidad y gestión sea fácil para cualquiera.';
+
+function iniciarNosotros(){
+    document.querySelectorAll('.avatar img').forEach(function(foto){
+        if(foto.complete && foto.naturalWidth === 0){
+            foto.remove();
+            return;
+        }
+        foto.addEventListener('error', function(){
+            foto.remove();
+        });
+    });
+
+    const enlace = document.querySelector('.nav-links a[href="nosotros.html"]');
+
+    if(!enlace || enlace.getAttribute('aria-current') === 'page'){
+        return;
+    }
+
+    const previa = document.createElement('div');
+    previa.className = 'previa-nosotros';
+    previa.setAttribute('aria-hidden', 'true');
+    previa.innerHTML = '<p>' + TEXTO_PREVIA_NOSOTROS + '</p>';
+    document.body.appendChild(previa);
+
+    function mostrar(){
+        if(window.innerWidth >= ANCHO_ESCRITORIO){
+            previa.classList.add('visible');
+        }
+    }
+
+    function ocultar(){
+        previa.classList.remove('visible');
+    }
+
+    enlace.addEventListener('mouseenter', mostrar);
+    enlace.addEventListener('mouseleave', ocultar);
+    enlace.addEventListener('focus', mostrar);
+    enlace.addEventListener('blur', ocultar);
 }
 
 /* ---------- Modelos tradicionales (Procesos) ---------- */
