@@ -87,6 +87,112 @@
             <button type="button" class="btn-iso" data-iso="25000" aria-pressed="false">ISO 25000</button>
         </div>
         <div class="iso-detalle" id="iso-detalle" aria-live="polite"></div>
+
+        <h3 class="pruebas-titulo">Niveles de prueba</h3>
+        <div class="piramide-caja">
+            <div class="piramide" aria-label="Pirámide de pruebas">
+                <span class="nivel nivel-3">Sistema</span>
+                <span class="nivel nivel-2">Integración</span>
+                <span class="nivel nivel-1">Unitarias</span>
+            </div>
+            <p>Las pruebas unitarias son las más numerosas y las de sistema las menos. Se va de lo chico a lo completo.</p>
+        </div>
+        <div class="volteables tres">
+            <article class="volteable" tabindex="0" role="button" aria-pressed="false">
+                <div class="volteable-interior">
+                    <div class="cara cara-frente">
+                        <span class="volteable-icono"><i class="fa-solid fa-puzzle-piece"></i></span>
+                        <h4>Unitarias</h4>
+                        <p>Prueban una parte chica del código.</p>
+                        <span class="volteable-pie"><i class="fa-solid fa-hand-pointer"></i> Tocá para ver más</span>
+                    </div>
+                    <div class="cara cara-dorso">
+                        <h4>Unitarias</h4>
+                        <strong>Qué prueba</strong>
+                        <p>Una función o un método, por separado.</p>
+                        <strong>Ejemplo</strong>
+                        <p>Probar que una función sume bien dos números.</p>
+                        <span class="volteable-pie"><i class="fa-solid fa-rotate-left"></i> Tocá para volver</span>
+                    </div>
+                </div>
+            </article>
+            <article class="volteable" tabindex="0" role="button" aria-pressed="false">
+                <div class="volteable-interior">
+                    <div class="cara cara-frente">
+                        <span class="volteable-icono"><i class="fa-solid fa-link"></i></span>
+                        <h4>Integración</h4>
+                        <p>Prueban que las partes funcionen juntas.</p>
+                        <span class="volteable-pie"><i class="fa-solid fa-hand-pointer"></i> Tocá para ver más</span>
+                    </div>
+                    <div class="cara cara-dorso">
+                        <h4>Integración</h4>
+                        <strong>Qué prueba</strong>
+                        <p>Cómo se comunican varios módulos entre sí.</p>
+                        <strong>Ejemplo</strong>
+                        <p>Que el login guarde bien los datos en la base.</p>
+                        <span class="volteable-pie"><i class="fa-solid fa-rotate-left"></i> Tocá para volver</span>
+                    </div>
+                </div>
+            </article>
+            <article class="volteable" tabindex="0" role="button" aria-pressed="false">
+                <div class="volteable-interior">
+                    <div class="cara cara-frente">
+                        <span class="volteable-icono"><i class="fa-solid fa-desktop"></i></span>
+                        <h4>Sistema</h4>
+                        <p>Prueban el sistema completo.</p>
+                        <span class="volteable-pie"><i class="fa-solid fa-hand-pointer"></i> Tocá para ver más</span>
+                    </div>
+                    <div class="cara cara-dorso">
+                        <h4>Sistema</h4>
+                        <strong>Qué prueba</strong>
+                        <p>Todo el software junto, como lo usaría el cliente.</p>
+                        <strong>Ejemplo</strong>
+                        <p>Entrar a una tienda online, comprar y pagar.</p>
+                        <span class="volteable-pie"><i class="fa-solid fa-rotate-left"></i> Tocá para volver</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <h3 class="pruebas-titulo">Tipos de prueba</h3>
+        <div class="volteables dos">
+            <article class="volteable" tabindex="0" role="button" aria-pressed="false">
+                <div class="volteable-interior">
+                    <div class="cara cara-frente">
+                        <span class="volteable-icono"><i class="fa-solid fa-eye-slash"></i></span>
+                        <h4>Caja negra</h4>
+                        <p>Se prueba sin mirar el código.</p>
+                        <span class="volteable-pie"><i class="fa-solid fa-hand-pointer"></i> Tocá para ver más</span>
+                    </div>
+                    <div class="cara cara-dorso">
+                        <h4>Caja negra</h4>
+                        <strong>Qué prueba</strong>
+                        <p>Lo que el sistema hace: se miran solo entradas y salidas.</p>
+                        <strong>Ejemplo</strong>
+                        <p>Escribir un mail inválido y ver si sale el error.</p>
+                        <span class="volteable-pie"><i class="fa-solid fa-rotate-left"></i> Tocá para volver</span>
+                    </div>
+                </div>
+            </article>
+            <article class="volteable" tabindex="0" role="button" aria-pressed="false">
+                <div class="volteable-interior">
+                    <div class="cara cara-frente">
+                        <span class="volteable-icono"><i class="fa-solid fa-eye"></i></span>
+                        <h4>Caja blanca</h4>
+                        <p>Se prueba mirando el código.</p>
+                        <span class="volteable-pie"><i class="fa-solid fa-hand-pointer"></i> Tocá para ver más</span>
+                    </div>
+                    <div class="cara cara-dorso">
+                        <h4>Caja blanca</h4>
+                        <strong>Qué prueba</strong>
+                        <p>El código por dentro: sus caminos y condiciones.</p>
+                        <strong>Ejemplo</strong>
+                        <p>Verificar que se ejecuten todos los if y los else.</p>
+                        <span class="volteable-pie"><i class="fa-solid fa-rotate-left"></i> Tocá para volver</span>
+                    </div>
+                </div>
+            </article>
+        </div>
     </div>
 </section>
 </main>

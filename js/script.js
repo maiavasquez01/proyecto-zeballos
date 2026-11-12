@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function(){
     iniciarModelos();
     iniciarNosotros();
     iniciarEstandares();
+    iniciarTarjetasPrueba();
     iniciarHerramientas();
     iniciarComparador();
     iniciarEncuesta();
@@ -183,6 +184,27 @@ function iniciarEstandares(){
                 otro.setAttribute('aria-pressed', String(otro === boton));
             });
             mostrar(boton.getAttribute('data-iso'));
+        });
+    });
+}
+
+/* ---------- Gestión de Calidad: tarjetas que se dan vuelta ---------- */
+function iniciarTarjetasPrueba(){
+    const tarjetas = document.querySelectorAll('.volteable');
+
+    tarjetas.forEach(function(tarjeta){
+        function dar(){
+            const vuelta = tarjeta.classList.toggle('dada-vuelta');
+
+            tarjeta.setAttribute('aria-pressed', String(vuelta));
+        }
+
+        tarjeta.addEventListener('click', dar);
+        tarjeta.addEventListener('keydown', function(evento){
+            if(evento.key === 'Enter' || evento.key === ' '){
+                evento.preventDefault();
+                dar();
+            }
         });
     });
 }

@@ -1932,3 +1932,152 @@ footer {
         font-weight: 700;
     }
 }
+
+
+/* ---------- Gestión de Calidad: niveles y tipos de prueba (escritorio) ---------- */
+@media (min-width: 1025px) {
+    .pruebas-titulo {
+        margin: 38px 0 14px;
+        font-family: var(--fuente-abierta);
+        font-size: 1.6rem;
+        text-align: left;
+    }
+
+    .piramide-caja {
+        padding: 18px 26px 14px;
+        border: 2px solid var(--turquesa);
+        border-radius: 14px;
+        background: rgba(12, 28, 52, 0.88);
+        margin-bottom: 16px;
+    }
+
+    .piramide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 14px;
+    }
+
+    .nivel {
+        display: block;
+        padding: 14px 0;
+        border-radius: 10px;
+        text-align: center;
+        font-family: var(--fuente-abierta);
+        font-weight: 600;
+    }
+
+    .nivel-3 { width: 125px; background: #bfe8ec; color: #0c1c34; }
+    .nivel-2 { width: 200px; background: #5fc3cb; color: #0c1c34; }
+    .nivel-1 { width: 300px; background: #3e8f95; color: #ffffff; }
+
+    .piramide-caja p {
+        text-align: left;
+        color: var(--turquesa);
+        font-family: var(--fuente-abierta);
+        font-size: 0.95rem;
+    }
+
+    .volteables {
+        display: grid;
+        gap: 14px;
+    }
+
+    .volteables.tres { grid-template-columns: repeat(3, 1fr); }
+    .volteables.dos { grid-template-columns: repeat(2, 1fr); }
+
+    .volteable {
+        height: 220px;
+        perspective: 900px;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .volteable:focus-visible {
+        outline: 3px solid #ffffff;
+        outline-offset: 3px;
+        border-radius: 14px;
+    }
+
+    .volteable-interior {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s ease;
+        transform-style: preserve-3d;
+    }
+
+    .volteable.dada-vuelta .volteable-interior {
+        transform: rotateY(180deg);
+    }
+
+    .cara {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 18px 20px;
+        border-radius: 14px;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        font-family: var(--fuente-abierta);
+    }
+
+    .cara-frente {
+        border: 2px solid var(--turquesa);
+        background: rgba(12, 28, 52, 0.92);
+        color: #ffffff;
+    }
+
+    .cara-dorso {
+        background: #5fc3cb;
+        color: #0c1c34;
+        transform: rotateY(180deg);
+    }
+
+    .volteable-icono {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        margin-bottom: 10px;
+        border: 2px solid var(--turquesa);
+        border-radius: 50%;
+        color: var(--turquesa);
+        font-size: 1.2rem;
+    }
+
+    .cara h4 {
+        margin-bottom: 6px;
+        font-size: 1.15rem;
+    }
+
+    .cara p {
+        font-size: 0.92rem;
+        line-height: 1.35;
+    }
+
+    .cara-dorso strong {
+        margin-top: 4px;
+        font-size: 0.85rem;
+    }
+
+    .cara-dorso p {
+        margin-bottom: 4px;
+    }
+
+    .volteable-pie {
+        margin-top: auto;
+        font-size: 0.82rem;
+    }
+
+    .cara-frente .volteable-pie {
+        color: var(--turquesa);
+    }
+
+    .volteable:hover .cara-frente {
+        border-color: #ffffff;
+    }
+}
