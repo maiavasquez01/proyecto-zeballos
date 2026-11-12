@@ -1756,10 +1756,10 @@ footer {
 
 /* ---------- Gestión de Calidad (escritorio, según Canva) ---------- */
 .calidad-escritorio {
-    display: none;
+    display: block;
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 0px) {
     .calidad-escritorio {
         display: block;
         max-width: 1000px;
@@ -1886,7 +1886,7 @@ footer {
 }
 
 
-@media (min-width: 1025px) {
+@media (min-width: 0px) {
     .idea-clave {
         max-width: 760px;
         margin: -10px auto 30px 0;
@@ -1935,7 +1935,7 @@ footer {
 
 
 /* ---------- Gestión de Calidad: niveles y tipos de prueba (escritorio) ---------- */
-@media (min-width: 1025px) {
+@media (min-width: 0px) {
     .pruebas-titulo {
         margin: 38px 0 14px;
         font-family: var(--fuente-abierta);
@@ -2084,7 +2084,7 @@ footer {
 
 
 /* ---------- Procesos: etapas del SDLC (escritorio) ---------- */
-@media (min-width: 1025px) {
+@media (min-width: 0px) {
     .sdlc {
         max-width: 860px;
         margin: 0 auto 40px;
@@ -2243,8 +2243,221 @@ footer {
     }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 0px) {
     .sdlc.solo-escritorio {
         display: block;
     }
+}
+
+
+/* ---------- Celular: adaptación de las secciones nuevas ---------- */
+@media (max-width: 1024px) {
+    .calidad-escritorio,
+    .sdlc {
+        max-width: 100%;
+        margin-top: 18px;
+    }
+
+    .calidad-titulo {
+        font-size: 1.9rem;
+    }
+
+    .calidad-sub {
+        font-size: 1rem;
+    }
+
+    .ideas-clave,
+    .volteables.tres,
+    .volteables.dos {
+        grid-template-columns: 1fr;
+    }
+
+    .idea-clave {
+        max-width: 100%;
+        margin: -10px 0 24px;
+    }
+
+    .iso-titulo {
+        font-size: 1.7rem;
+    }
+
+    .iso-botones {
+        gap: 12px;
+    }
+
+    .btn-iso {
+        width: 46%;
+        font-size: 1.05rem;
+    }
+
+    .iso-grilla {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pruebas-titulo {
+        font-size: 1.4rem;
+        margin-top: 28px;
+    }
+
+    .piramide-caja {
+        padding: 14px;
+    }
+
+    .nivel-3 { width: 38%; }
+    .nivel-2 { width: 62%; }
+    .nivel-1 { width: 88%; }
+
+    .volteable {
+        height: 210px;
+    }
+
+    .sdlc-titulo {
+        font-size: 1.5rem;
+    }
+
+    .sdlc-intro {
+        font-size: 0.95rem;
+    }
+
+    .sdlc-cabecera {
+        font-size: 1.05rem;
+    }
+
+    .procesos-parrafo-sdlc {
+        display: none;
+    }
+}
+
+
+/* ---------- Recursos: herramientas de calidad ---------- */
+.herramientas-botones {
+    flex-wrap: wrap;
+}
+
+.btn-herramienta-calidad {
+    flex: 1 1 100%;
+    background: rgba(74, 124, 122, 0.92);
+}
+
+.titulo-calidad {
+    background: rgba(74, 124, 122, 0.95);
+}
+
+.herramientas-calidad {
+    align-self: stretch;
+    padding: 16px;
+    border-radius: 12px;
+    background: rgba(8, 20, 40, 0.9);
+    text-align: left;
+    font-family: var(--fuente-abierta);
+}
+
+.hc-intro {
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.hc-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.hc-filtro {
+    padding: 9px 14px;
+    border: 1px solid var(--turquesa);
+    border-radius: 10px;
+    background: transparent;
+    color: #ffffff;
+    font-family: var(--fuente-abierta);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.hc-filtro:hover {
+    background: rgba(64, 192, 188, 0.25);
+}
+
+.hc-filtro.activo {
+    background: var(--turquesa);
+    color: #0c1c34;
+    font-weight: 700;
+}
+
+.hc-contador {
+    margin-bottom: 12px;
+    color: #9fdede;
+    font-size: 0.82rem;
+}
+
+.hc-grilla {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.hc-tarjeta {
+    padding: 14px;
+    border: 1px solid var(--turquesa);
+    border-radius: 12px;
+    background: rgba(16, 36, 70, 0.95);
+    animation: aparecer 0.3s ease;
+}
+
+.hc-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 10px;
+    border: 2px solid var(--turquesa);
+    border-radius: 50%;
+    color: var(--turquesa);
+    font-size: 1.1rem;
+}
+
+.hc-tarjeta h4 {
+    font-size: 1.05rem;
+}
+
+.hc-tipo {
+    display: block;
+    margin: 2px 0 6px;
+    color: var(--turquesa);
+    font-size: 0.8rem;
+}
+
+.hc-tarjeta p {
+    font-size: 0.9rem;
+    line-height: 1.35;
+}
+
+@media (min-width: 600px) {
+    .hc-grilla { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1025px) {
+    .herramientas-botones {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .btn-herramienta:not(.btn-herramienta-calidad):first-child {
+        flex: 0 0 28%;
+    }
+
+    .btn-herramienta:nth-child(2) {
+        flex: 1;
+    }
+
+    .herramientas-calidad {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .hc-grilla { grid-template-columns: repeat(4, 1fr); }
 }

@@ -38,6 +38,7 @@
     <div class="herramientas-botones">
         <button type="button" class="btn-herramienta" data-abre="panel-comparador" aria-controls="panel-comparador" aria-expanded="false">Comparador de metodologias</button>
         <button type="button" class="btn-herramienta" data-abre="panel-encuesta" aria-controls="panel-encuesta" aria-expanded="false">Encuesta de preferencias</button>
+        <button type="button" class="btn-herramienta btn-herramienta-calidad" data-abre="panel-calidad" aria-controls="panel-calidad" aria-expanded="false">Herramientas de calidad</button>
     </div>
 
     <section id="panel-comparador" class="panel-herramienta" aria-label="Comparador de metodologías">
@@ -58,6 +59,16 @@
     <section id="panel-encuesta" class="panel-herramienta" aria-label="Encuesta de preferencias metodológicas">
         <h3 class="titulo-herramienta">Encuesta de preferencias metodologicas</h3>
         <div id="encuesta-contenido" class="encuesta-zona"></div>
+    </section>
+
+    <section id="panel-calidad" class="panel-herramienta" aria-label="Herramientas de calidad">
+        <h3 class="titulo-herramienta titulo-calidad">Herramientas de calidad</h3>
+        <div class="herramientas-calidad">
+            <p class="hc-intro">Estas herramientas ayudan a gestionar las pruebas, seguir los defectos y analizar la calidad del código. Filtrá por tipo para ver cada grupo.</p>
+            <div class="hc-filtros" id="hc-filtros" role="group" aria-label="Filtrar por tipo de herramienta"></div>
+            <p class="hc-contador" id="hc-contador" aria-live="polite"></p>
+            <div class="hc-grilla" id="hc-grilla"></div>
+        </div>
     </section>
 
     <p>Material de consulta, herramientas y ejercicios prácticos para afianzar los conceptos de gestión y calidad de procesos.</p>

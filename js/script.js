@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function(){
     iniciarEstandares();
     iniciarTarjetasPrueba();
     iniciarHerramientas();
+    iniciarHerramientasCalidad();
     iniciarComparador();
     iniciarEncuesta();
     iniciarFormulario();
@@ -187,6 +188,98 @@ function iniciarEstandares(){
             mostrar(boton.getAttribute('data-iso'));
         });
     });
+}
+
+/* ---------- Recursos: herramientas de calidad con filtro por tipo ---------- */
+const CATEGORIAS_CALIDAD = [
+    {id: 'todas', nombre: 'Todas', icono: 'fa-table-cells-large'},
+    {id: 'bug', nombre: 'Bug Trackers', icono: 'fa-bug'},
+    {id: 'linter', nombre: 'Linters', icono: 'fa-code'},
+    {id: 'test', nombre: 'Test Management', icono: 'fa-clipboard-check'}
+];
+
+const HERRAMIENTAS_CALIDAD = [
+    {nombre: 'Jira', categoria: 'bug', texto: 'Sigue errores y tareas de un proyecto.'},
+    {nombre: 'Bugzilla', categoria: 'bug', texto: 'Registra y organiza defectos. Es de código abierto.'},
+    {nombre: 'GitHub Issues', categoria: 'bug', texto: 'Reporta errores dentro del mismo repositorio.'},
+    {nombre: 'ESLint', categoria: 'linter', texto: 'Detecta errores y malas prácticas en JavaScript.'},
+    {nombre: 'Pylint', categoria: 'linter', texto: 'Revisa el código Python y le pone una nota.'},
+    {nombre: 'SonarQube', categoria: 'linter', texto: 'Analiza la calidad y la seguridad del código.'},
+    {nombre: 'TestRail', categoria: 'test', texto: 'Organiza casos de prueba y muestra los resultados.'},
+    {nombre: 'Zephyr', categoria: 'test', texto: 'Gestiona pruebas dentro de Jira.'},
+    {nombre: 'Xray', categoria: 'test', texto: 'Planifica y ejecuta pruebas junto a Jira.'}
+];
+
+function iniciarHerramientasCalidad(){
+    const contenedorFiltros = document.getElementById('hc-filtros');
+    const contador = document.getElementById('hc-contador');
+    const grilla = document.getElementById('hc-grilla');
+
+    if(!contenedorFiltros || !contador || !grilla){
+        return;
+    }
+
+    function iconoDe(id){
+        let icono = 'fa-table-cells-large';
+
+        CATEGORIAS_CALIDAD.forEach(function(categoria){
+            if(categoria.id === id){
+                icono = categoria.icono;
+            }
+        });
+        return icono;
+    }
+
+    function nombreDe(id){
+        let nombre = '';
+
+        CATEGORIAS_CALIDAD.forEach(function(categoria){
+            if(categoria.id === id){
+                nombre = categoria.nombre;
+            }
+        });
+        return nombre;
+    }
+
+    function mostrar(filtro){
+        let html = '';
+        let cantidad = 0;
+
+        HERRAMIENTAS_CALIDAD.forEach(function(herramienta){
+            if(filtro === 'todas' || herramienta.categoria === filtro){
+                cantidad++;
+                html += '<article class="hc-tarjeta">' +
+                    '<span class="hc-icono"><i class="fa-solid ' + iconoDe(herramienta.categoria) + '"></i></span>' +
+                    '<h4>' + herramienta.nombre + '</h4>' +
+                    '<span class="hc-tipo">' + nombreDe(herramienta.categoria) + '</span>' +
+                    '<p>' + herramienta.texto + '</p></article>';
+            }
+        });
+        grilla.innerHTML = html;
+        contador.textContent = 'Mostrando ' + cantidad + ' de ' + HERRAMIENTAS_CALIDAD.length + ' herramientas';
+        contenedorFiltros.querySelectorAll('.hc-filtro').forEach(function(boton){
+            const activo = boton.getAttribute('data-filtro') === filtro;
+
+            boton.classList.toggle('activo', activo);
+            boton.setAttribute('aria-pressed', String(activo));
+        });
+    }
+
+    let botones = '';
+
+    CATEGORIAS_CALIDAD.forEach(function(categoria){
+        botones += '<button type="button" class="hc-filtro" data-filtro="' + categoria.id + '" aria-pressed="false">' +
+            '<i class="fa-solid ' + categoria.icono + '"></i> ' + categoria.nombre + '</button>';
+    });
+    contenedorFiltros.innerHTML = botones;
+    contenedorFiltros.addEventListener('click', function(evento){
+        const boton = evento.target.closest('.hc-filtro');
+
+        if(boton){
+            mostrar(boton.getAttribute('data-filtro'));
+        }
+    });
+    mostrar('todas');
 }
 
 /* ---------- Procesos: etapas del SDLC (escritorio) ---------- */
