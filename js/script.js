@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function(){
     marcarSeccionActiva();
     iniciarDeslizadores();
     iniciarAmpliar();
+    iniciarSdlc();
     iniciarModelos();
     iniciarNosotros();
     iniciarEstandares();
@@ -186,6 +187,72 @@ function iniciarEstandares(){
             mostrar(boton.getAttribute('data-iso'));
         });
     });
+}
+
+/* ---------- Procesos: etapas del SDLC (escritorio) ---------- */
+const ETAPAS_SDLC = [
+    {nombre: 'Requisitos', icono: 'fa-list-check', texto: 'Se define qué necesita el usuario y qué tiene que hacer el sistema.', idea: 'Si se entiende mal, todo lo que sigue sale mal.'},
+    {nombre: 'Diseño', icono: 'fa-pen-ruler', texto: 'Se planifica cómo va a ser el sistema: su estructura, sus pantallas y sus datos.', idea: 'Da un plano para programar con orden.'},
+    {nombre: 'Desarrollo', icono: 'fa-code', texto: 'Se programa el sistema siguiendo el diseño.', idea: 'Acá se construye el producto.'},
+    {nombre: 'Pruebas', icono: 'fa-bug', texto: 'Se buscan y corrigen errores, y se verifica que cumpla los requisitos.', idea: 'Asegura la calidad antes de entregar.'},
+    {nombre: 'Despliegue', icono: 'fa-rocket', texto: 'Se entrega el software y se pone a disposición de los usuarios.', idea: 'Acá el producto empieza a usarse.'},
+    {nombre: 'Mantenimiento', icono: 'fa-wrench', texto: 'Se corrigen fallas y se agregan mejoras después de la entrega.', idea: 'El software sigue vivo y evoluciona.'}
+];
+
+function iniciarSdlc(){
+    const lista = document.getElementById('sdlc-lista');
+    const etiqueta = document.getElementById('sdlc-etapa');
+    const anterior = document.getElementById('sdlc-anterior');
+    const siguiente = document.getElementById('sdlc-siguiente');
+    let actual = 0;
+
+    if(!lista || !etiqueta || !anterior || !siguiente){
+        return;
+    }
+
+    function dibujar(){
+        let html = '';
+
+        ETAPAS_SDLC.forEach(function(etapa, i){
+            const clase = i < actual ? 'hecha' : (i === actual ? 'activa' : 'pendiente');
+            let detalle = '';
+
+            if(i === actual){
+                detalle = '<div class="sdlc-detalle"><p>' + etapa.texto + '</p><span><i class="fa-regular fa-lightbulb"></i> ' + etapa.idea + '</span></div>';
+            }
+            html += '<li class="sdlc-paso ' + clase + '">' +
+                '<button type="button" class="sdlc-cabecera" data-paso="' + i + '"' + (i === actual ? ' aria-current="step"' : '') + '>' +
+                '<span class="sdlc-numero">' + (i + 1) + '</span>' +
+                '<i class="fa-solid ' + etapa.icono + '"></i>' +
+                '<span class="sdlc-nombre">' + etapa.nombre + '</span></button>' + detalle + '</li>';
+        });
+        lista.innerHTML = html;
+        etiqueta.textContent = 'Etapa ' + (actual + 1) + ' de ' + ETAPAS_SDLC.length;
+        anterior.disabled = actual === 0;
+        siguiente.disabled = actual === ETAPAS_SDLC.length - 1;
+    }
+
+    lista.addEventListener('click', function(evento){
+        const boton = evento.target.closest('.sdlc-cabecera');
+
+        if(boton){
+            actual = Number(boton.getAttribute('data-paso'));
+            dibujar();
+        }
+    });
+    anterior.addEventListener('click', function(){
+        if(actual > 0){
+            actual--;
+            dibujar();
+        }
+    });
+    siguiente.addEventListener('click', function(){
+        if(actual < ETAPAS_SDLC.length - 1){
+            actual++;
+            dibujar();
+        }
+    });
+    dibujar();
 }
 
 /* ---------- Gestión de Calidad: tarjetas que se dan vuelta ---------- */

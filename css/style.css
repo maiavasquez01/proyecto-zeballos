@@ -2081,3 +2081,170 @@ footer {
         border-color: #ffffff;
     }
 }
+
+
+/* ---------- Procesos: etapas del SDLC (escritorio) ---------- */
+@media (min-width: 1025px) {
+    .sdlc {
+        max-width: 860px;
+        margin: 0 auto 40px;
+        text-align: left;
+        font-family: var(--fuente-abierta);
+    }
+
+    .sdlc-titulo {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .sdlc-intro {
+        font-size: 1.05rem;
+        line-height: 1.45;
+        margin-bottom: 14px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .sdlc-etapa {
+        margin-bottom: 10px;
+        color: var(--turquesa);
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .sdlc-lista {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sdlc-paso {
+        position: relative;
+        padding-bottom: 14px;
+        padding-left: 62px;
+    }
+
+    .sdlc-paso::before {
+        content: "";
+        position: absolute;
+        left: 21px;
+        top: 44px;
+        bottom: -2px;
+        width: 4px;
+        background: var(--turquesa);
+    }
+
+    .sdlc-paso:last-child::before {
+        display: none;
+    }
+
+    .sdlc-paso.pendiente::before {
+        background: #2d4b5b;
+    }
+
+    .sdlc-cabecera {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        min-height: 44px;
+        border: none;
+        background: none;
+        color: #ffffff;
+        font-family: var(--fuente-abierta);
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .sdlc-cabecera i {
+        color: var(--turquesa);
+    }
+
+    .sdlc-numero {
+        position: absolute;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border: 2px solid var(--turquesa);
+        border-radius: 50%;
+        background: var(--turquesa);
+        color: #0c1c34;
+        font-size: 1rem;
+    }
+
+    .sdlc-paso.pendiente .sdlc-numero {
+        background: #0c1c34;
+        color: #ffffff;
+        border-color: #2d4b5b;
+    }
+
+    .sdlc-paso.pendiente .sdlc-cabecera {
+        color: #8a9aa6;
+    }
+
+    .sdlc-paso.activa .sdlc-numero {
+        box-shadow: 0 0 0 5px rgba(64, 192, 188, 0.35);
+    }
+
+    .sdlc-cabecera:hover .sdlc-nombre {
+        text-decoration: underline;
+    }
+
+    .sdlc-detalle {
+        margin-top: 8px;
+        padding: 12px 16px;
+        border: 1px solid var(--turquesa);
+        border-radius: 12px;
+        background: rgba(12, 28, 52, 0.92);
+        animation: aparecer 0.3s ease;
+    }
+
+    .sdlc-detalle p {
+        margin-bottom: 6px;
+        font-size: 1rem;
+    }
+
+    .sdlc-detalle span {
+        color: var(--turquesa);
+        font-size: 0.92rem;
+    }
+
+    .sdlc-botones {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+    }
+
+    .btn-sdlc {
+        padding: 10px 26px;
+        border: 1px solid var(--turquesa);
+        border-radius: 10px;
+        background: #0c1c34;
+        color: #ffffff;
+        font-family: var(--fuente-abierta);
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    .btn-sdlc-sig {
+        background: var(--turquesa);
+        color: #0c1c34;
+        font-weight: 700;
+    }
+
+    .btn-sdlc:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+}
+
+@media (min-width: 1025px) {
+    .sdlc.solo-escritorio {
+        display: block;
+    }
+}
